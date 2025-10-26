@@ -1,0 +1,1 @@
+# system-for-analyzing-and-synthesizing-noise-resistant-monolithic-code
