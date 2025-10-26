@@ -1,0 +1,142 @@
+/* === ЗАГАЛЬНІ СТИЛІ === */
+
+.root {
+    /* Використовуємо стандартний системний шрифт для кращої сумісності */
+    -fx-font-family: system, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #2D2D2D;
+    -fx-text-fill: #E0E0E0;
+}
+
+.main-container {
+    -fx-background-color: #2D2D2D;
+    -fx-text-fill: #E0E0E0;
+}
+
+/* === ЗАГОЛОВКИ ТА МІТКИ === */
+
+Label {
+    -fx-text-fill: #E0E0E0;
+}
+
+.title-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #AAAAAA; /* Трохи світліший сірий */
+    -fx-padding: 5px 0 0 0;
+}
+
+.data-label {
+    -fx-font-family: 'Monospaced', 'Courier New', monospace;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FF9800; /* АКЦЕНТ: Помаранчевий */
+    -fx-padding: 2px 0 5px 0;
+}
+
+/* === ЕЛЕМЕНТИ КЕРУВАННЯ === */
+
+#encodeButton {
+    -fx-background-color: #FF9800; /* АКЦЕНТ: Помаранчевий */
+    -fx-text-fill: #212121; /* Кращий контраст: темний текст на помаранчевому */
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px 15px;
+    -fx-cursor: hand;
+
+    /* ПОЛІРУВАННЯ: Плавний перехід */
+    -fx-transition: -fx-background-color 0.2s ease-in-out;
+}
+
+#encodeButton:hover {
+    -fx-background-color: #F57C00; /* АКЦЕНТ: Темніший помаранчевий */
+}
+
+TextField {
+    -fx-background-color: #3C3C3C;
+    -fx-text-fill: #E0E0E0;
+    -fx-border-color: #555555;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-prompt-text-fill: #9E9E9E; /* Світліший текст-підказка */
+    -fx-font-family: 'Monospaced', 'Courier New', monospace;
+    -fx-font-size: 14px;
+}
+
+TextField:focused {
+    -fx-border-color: #FF9800; /* АКЦЕНТ: Помаранчева рамка при фокусі */
+    -fx-border-width: 2px;
+}
+
+ComboBox {
+    -fx-background-color: #3C3C3C;
+    -fx-border-color: #555555;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+/* Стиль для стрілки */
+ComboBox .arrow {
+    -fx-background-color: #E0E0E0;
+    -fx-padding: 4px;
+}
+
+/* Елементи у випадаючому списку */
+ComboBox .list-cell {
+    -fx-background-color: #3C3C3C;
+    -fx-text-fill: #E0E0E0;
+}
+
+/* Наведення та вибір елемента - тут була проблема */
+ComboBox .list-cell:hover, ComboBox .list-cell:selected {
+    -fx-background-color: #FF9800; /* АКЦЕНТ: Помаранчевий */
+    -fx-text-fill: #212121; /* Кращий контраст: темний текст */
+}
+
+/* === КОНТЕЙНЕР ДЛЯ БІТІВ === */
+
+.bit-button-box {
+    -fx-background-color: #252525;
+    -fx-border-color: #444444;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px; /* Трохи більше відступів */
+    -fx-spacing: 4px;
+}
+
+.bit-button {
+    -fx-background-color: #424242;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: 'Monospaced', 'Courier New', monospace;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-min-width: 32px;
+    -fx-padding: 6px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+
+    /* ПОЛІРУВАННЯ: Плавний перехід */
+    -fx-transition: -fx-background-color 0.2s ease-in-out, -fx-border-color 0.2s ease-in-out;
+}
+
+.bit-button:hover {
+    -fx-background-color: #555555;
+}
+
+/* Клас, що додається при помилці */
+.error-bit {
+    -fx-border-color: #E53935; /* Червона рамка - залишаємо, це стандарт */
+    -fx-background-color: #4E3030; /* Темно-червоний фон */
+}
+
+/* НОВИЙ КЛАС: Для підсвітки бітів при наведенні */
+.highlight-bit {
+    -fx-border-color: #03A9F4; /* Яскравий синій/блакитний */
+    -fx-background-color: #3C4A52; /* Світліший синюватий фон */
+}

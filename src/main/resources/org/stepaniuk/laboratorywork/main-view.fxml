@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.stepaniuk.laboratorywork.controllers.MainController" styleClass="main-container">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <VBox spacing="5.0">
+        <Label text="Оберіть алгоритм кодування:" styleClass="title-label"/>
+        <ComboBox fx:id="algorithmSelector" maxWidth="Infinity"/>
+    </VBox>
+
+    <HBox fx:id="generatorBox" alignment="CENTER_LEFT" spacing="10.0"
+          managed="false" visible="false">
+        <Label text="Інформаційні біти (k):"/>
+        <TextField fx:id="kInput" prefWidth="60" text="8"/>
+        <Button fx:id="generateButton" onAction="#handleGenerate" text="Згенерувати"/>
+    </HBox>
+
+    <VBox fx:id="mainControlsBox" spacing="15.0">
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label text="Інформаційне слово:"/>
+            <TextField fx:id="inputField" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="encodeButton" onAction="#handleEncode" text="Кодувати"/>
+        </HBox>
+
+        <VBox spacing="5.0">
+            <Label text="Кодове слово (клікніть на біт для симуляції помилки):" styleClass="title-label"/>
+            <HBox fx:id="codeWordBox" styleClass="bit-button-box"/>
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label text="Статус аналізу:" styleClass="title-label"/>
+            <Label fx:id="statusLabel" text="N/A" styleClass="data-label"/>
+            <Label text="Виправлені інформаційні дані:" styleClass="title-label">
+                <VBox.margin>
+                    <Insets top="10.0"/>
+                </VBox.margin>
+            </Label>
+            <Label fx:id="correctedDataLabel" text="N/A" styleClass="data-label"/>
+            <Label text="Виправлене кодове слово:" styleClass="title-label">
+                <VBox.margin>
+                    <Insets top="10.0"/>
+                </VBox.margin>
+            </Label>
+            <Label fx:id="correctedWordLabel" text="N/A" styleClass="data-label" wrapText="true"/>
+        </VBox>
+    </VBox>
+
+</VBox>
